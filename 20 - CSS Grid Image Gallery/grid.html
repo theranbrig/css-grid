@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../assets/style.css" />
+		<title>Gettin' Griddy With It</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="content-area header"><p>This is the Header</p></div>
+			<div class="content-area side-bar1"><p>This is a Side Bar</p></div>
+			<div class="content-area side-bar2"><p>This is a Side Bar</p></div>
+			<div class="content-area main-content"><p>This the Main Content</p></div>
+			<div class="content-area about-section"><p>This is an About Section</p></div>
+			<div class="content-area footer"><p>This is the Footer</p></div>
+		</div>
+
+		<style>
+			.container {
+				display: grid;
+				grid-gap: 5px;
+				grid-template-columns: 1fr 4fr 1fr;
+				grid-template-rows: 100px 100px 100px 50px 100px;
+				grid-template-areas:
+					'header header header'
+					'side-bar1 content side-bar2'
+					'side-bar1 content side-bar2'
+					'side-bar1 about side-bar2'
+					'footer footer footer';
+			}
+
+			.header {
+				grid-area: header;
+			}
+
+			.side-bar1 {
+				grid-area: side-bar1;
+			}
+
+			.side-bar2 {
+				grid-area: side-bar2;
+			}
+
+			.main-content {
+				grid-area: content;
+			}
+
+			.about-section {
+				grid-area: about;
+			}
+
+			.footer {
+				grid-area: footer;
+			}
+
+			.content-area {
+				background: tomato;
+				padding: 5px;
+				border: 3px solid yellow;
+				font-size: 1.5rem;
+				text-align: center;
+			}
+
+			@media (max-width: 700px) {
+				.container {
+					grid-template-areas:
+						'header header header'
+						'side-bar1 content content'
+						'side-bar2 content content'
+						'side-bar2 about about '
+						'footer footer footer';
+				}
+			}
+		</style>
+	</body>
+</html>
